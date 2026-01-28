@@ -3,9 +3,9 @@ import { Chrono } from "react-chrono"
 function App() {
   const items = [
     {
-      title: "2015",
-      cardTitle: "BPE Founded",
-      cardDetailedText: "The BPE group was established in 2015."
+      title: "September 8, 2015",
+      cardTitle: "BPE Discord Founded",
+      cardDetailedText: "First readable message sent by CD: \"killando who r u\""
     },
     {
       title: "January 1, 2026",

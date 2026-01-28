@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Override react-chrono focus styles for dark mode */
+* {
+  outline: none !important;
+}
+
+*:focus,
+*:focus-visible {
+  outline: none !important;
+  background-color: transparent !important;
+}
+
+/* Fix any yellow highlights */
+::selection {
+  background-color: rgba(99, 102, 241, 0.3);
+  color: white;
+}

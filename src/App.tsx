@@ -5,6 +5,7 @@ type TimelineMode = "HORIZONTAL" | "VERTICAL" | "VERTICAL_ALTERNATING" | "HORIZO
 
 function App() {
   const [mode, setMode] = useState<TimelineMode>("HORIZONTAL")
+  const [dropdownOpen, setDropdownOpen] = useState(false)
 
   const items = [
     {
@@ -33,20 +34,34 @@ function App() {
 
   return (
     <div className="h-screen w-screen bg-black">
-      <div className="absolute top-4 right-4 z-50 flex gap-2">
-        {modes.map((m) => (
-          <button
-            key={m.value}
-            onClick={() => setMode(m.value)}
-            className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-              mode === m.value
-                ? "bg-indigo-600 text-white"
-                : "bg-gray-800 text-gray-300 hover:bg-gray-700"
-            }`}
-          >
-            {m.label}
-          </button>
-        ))}
+      <div className="absolute top-4 right-4 z-50">
+        <button
+          onClick={() => setDropdownOpen(!dropdownOpen)}
+          className="px-4 py-2 rounded-lg font-medium bg-indigo-600 text-white hover:bg-indigo-700 transition-colors"
+        >
+          Change Layout
+        </button>
+
+        {dropdownOpen && (
+          <div className="absolute right-0 mt-2 w-48 bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+            {modes.map((m) => (
+              <button
+                key={m.value}
+                onClick={() => {
+                  setMode(m.value)
+                  setDropdownOpen(false)
+                }}
+                className={`w-full px-4 py-2 text-left font-medium transition-colors ${
+                  mode === m.value
+                    ? "bg-indigo-600 text-white"
+                    : "text-gray-300 hover:bg-gray-700"
+                }`}
+              >
+                {m.label}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="h-full w-full">

@@ -17,6 +17,7 @@ declare module 'react-chrono' {
     mode?: 'HORIZONTAL' | 'VERTICAL' | 'VERTICAL_ALTERNATING' | 'HORIZONTAL_ALL'
     cardHeight?: number
     darkMode?: boolean
+    scrollable?: boolean
     theme?: {
       primary?: string
       secondary?: string

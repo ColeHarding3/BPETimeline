@@ -64,11 +64,12 @@ function App() {
         )}
       </div>
 
-      <div className="h-full w-full">
+      <div className="h-full w-full overflow-auto">
         <Chrono
           items={items}
           mode={mode}
           darkMode
+          scrollable
         />
       </div>
     </div>

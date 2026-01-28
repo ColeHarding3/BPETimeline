@@ -13,9 +13,9 @@ function App() {
       cardDetailedText: "First readable message sent by CD: \"killando who r u\""
     },
     {
-      title: "January 1, 2026",
-      cardTitle: "2b2t Arc",
-      cardDetailedText: "The legendary 2b2t arc begins."
+      title: "November 15, 2025",
+      cardTitle: "2B2T Arc begins",
+      cardDetailedText: "Cole solo starts running on the highway. Cam joins 11/28/2025. CD joins 11/29/2025. Italia joins 11/30/2025. Cole founded the BPE Base on 12/01/2025, approximately 23 million blocks away from spawn, taking about 30 hours to travel to by elytra bounce."
     }
   ]
 

@@ -27,7 +27,7 @@ function App() {
   ]
 
   return (
-    <div className="h-screen w-screen bg-gray-900">
+    <div className="h-screen w-screen bg-black">
       <div className="absolute top-4 right-4 z-50 flex gap-2">
         {modes.map((m) => (
           <button
@@ -48,13 +48,7 @@ function App() {
         <Chrono
           items={items}
           mode={mode}
-          theme={{
-            primary: "#6366F1",
-            secondary: "#1F2937",
-            cardBgColor: "#1F2937",
-            titleColor: "#E5E7EB",
-            titleColorActive: "#6366F1",
-          }}
+          darkMode
         />
       </div>
     </div>

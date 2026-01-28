@@ -16,6 +16,7 @@ declare module 'react-chrono' {
     items?: TimelineItemModel[]
     mode?: 'HORIZONTAL' | 'VERTICAL' | 'VERTICAL_ALTERNATING' | 'HORIZONTAL_ALL'
     cardHeight?: number
+    darkMode?: boolean
     theme?: {
       primary?: string
       secondary?: string

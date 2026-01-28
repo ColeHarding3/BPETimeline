@@ -1,6 +1,11 @@
+import { useState } from "react"
 import { Chrono } from "react-chrono"
 
+type TimelineMode = "HORIZONTAL" | "VERTICAL" | "VERTICAL_ALTERNATING" | "HORIZONTAL_ALL"
+
 function App() {
+  const [mode, setMode] = useState<TimelineMode>("HORIZONTAL")
+
   const items = [
     {
       title: "September 8, 2015",
@@ -14,19 +19,44 @@ function App() {
     }
   ]
 
+  const modes: { label: string; value: TimelineMode }[] = [
+    { label: "Horizontal", value: "HORIZONTAL" },
+    { label: "Vertical", value: "VERTICAL" },
+    { label: "Alternating", value: "VERTICAL_ALTERNATING" },
+    { label: "Horizontal All", value: "HORIZONTAL_ALL" }
+  ]
+
   return (
-    <div className="h-screen w-screen">
-      <Chrono
-        items={items}
-        mode="HORIZONTAL"
-        theme={{
-          primary: "#4F46E5",
-          secondary: "#EEF2FF",
-          cardBgColor: "#FFFFFF",
-          titleColor: "#1F2937",
-          titleColorActive: "#4F46E5",
-        }}
-      />
+    <div className="h-screen w-screen bg-gray-900">
+      <div className="absolute top-4 right-4 z-50 flex gap-2">
+        {modes.map((m) => (
+          <button
+            key={m.value}
+            onClick={() => setMode(m.value)}
+            className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+              mode === m.value
+                ? "bg-indigo-600 text-white"
+                : "bg-gray-800 text-gray-300 hover:bg-gray-700"
+            }`}
+          >
+            {m.label}
+          </button>
+        ))}
+      </div>
+
+      <div className="h-full w-full">
+        <Chrono
+          items={items}
+          mode={mode}
+          theme={{
+            primary: "#6366F1",
+            secondary: "#1F2937",
+            cardBgColor: "#1F2937",
+            titleColor: "#E5E7EB",
+            titleColorActive: "#6366F1",
+          }}
+        />
+      </div>
     </div>
   )
 }
